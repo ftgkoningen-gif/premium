@@ -1,0 +1,9 @@
+{
+  "name": "@websites/premium-liften",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node ../../serve.mjs . 3001",
+    "build": "echo 'Statische site — geen build stap nodig'"
+  }
+}
