@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PREMIUM Liften – Next Level Service door heel Nederland. Merkonafhankelijke partner voor installatie, modernisering en 24/7 service van liftinstallaties.">
+  <title>PREMIUM Liften | Next Level Service door heel Nederland</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pl: {
+              navy:      '#1a5da8',
+              'navy-lt': '#3381cc',
+              'navy-dk': '#0e3568',
+              'navy-dp': '#0c1624',
+              orange:    '#e07214',
+              steel:     '#e4eef8',
+              cream:     '#f5f7fc',
+            }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            body:    ['Barlow', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="/premium liften/premiumliften.css">
+  <style>
+    /* Stats strip ticker */
+    .stat-strip { background: var(--navy); }
+
+    /* Certification logo strip */
+    .cert-strip {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 32px;
+    }
+    .cert-badge {
+      display: flex; align-items: center; justify-content: center;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.14);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.875rem; font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.05em;
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
+    }
+    .cert-badge:hover {
+      background: rgba(51,129,204,0.18);
+      border-color: rgba(51,129,204,0.45);
+      color: rgba(255,255,255,0.9);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50"
+     style="background: var(--navy-dp);">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[66px] flex items-center justify-between gap-6">
+
+    <!-- Logo / Wordmark -->
+    <a href="/premium liften/" class="flex-shrink-0 flex items-center gap-2.5">
+      <!-- Lift icon mark -->
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="2" width="16" height="24" rx="2" stroke="white" stroke-width="1.6" opacity="0.9"/>
+        <line x1="9" y1="2" x2="9" y2="26" stroke="white" stroke-width="1.2" opacity="0.45"/>
+        <line x1="19" y1="2" x2="19" y2="26" stroke="white" stroke-width="1.2" opacity="0.45"/>
+        <rect x="9" y="10" width="10" height="8" rx="1.5" fill="rgba(51,129,204,0.6)" stroke="white" stroke-width="1.2"/>
+        <path d="M12 6.5 L14 4.5 L16 6.5" fill="none" stroke="#3381cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 21.5 L14 23.5 L16 21.5" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;letter-spacing:0.04em;line-height:1;">
+        PREMIUM <span style="color:var(--navy-lt);font-weight:600;">Liften</span>
+      </span>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden lg:flex items-center gap-7">
+      <li><a href="/premium liften/" class="nav-link active">Home</a></li>
+      <li><a href="#nieuwe-liften" class="nav-link">Nieuwe liften</a></li>
+      <li><a href="#modernisering" class="nav-link">Modernisering</a></li>
+      <li><a href="#service" class="nav-link">Service</a></li>
+      <li><a href="#over-ons" class="nav-link">Over ons</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <!-- Right: CTA + hamburger -->
+    <div class="flex items-center gap-3">
+      <a href="tel:0882323100" class="btn-primary hidden lg:inline-flex" style="padding: 9px 18px; font-size: 0.85rem;">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2.5 1.5h2.5l1.25 3-1.25 1.25a7.5 7.5 0 0 0 3.75 3.75L10 8.25l3 1.25v2.5c-2.5 1.25-10-6.25-10-10.5Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        088-232 31 00
+      </a>
+      <button id="menu-btn" class="lg:hidden flex flex-col gap-[5px] p-2 rounded"
+              aria-label="Navigatiemenu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-nav" class="lg:hidden hidden"
+       style="background: var(--navy-dk); border-top: 1px solid rgba(255,255,255,0.07);">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-0.5">
+      <a href="/premium liften/" class="nav-link py-3 border-b border-white/5 block">Home</a>
+      <a href="#nieuwe-liften" class="nav-link py-3 border-b border-white/5 block">Nieuwe liften</a>
+      <a href="#modernisering" class="nav-link py-3 border-b border-white/5 block">Modernisering</a>
+      <a href="#service" class="nav-link py-3 border-b border-white/5 block">Service</a>
+      <a href="#over-ons" class="nav-link py-3 border-b border-white/5 block">Over ons</a>
+      <a href="#contact" class="nav-link py-3 border-b border-white/5 block">Contact</a>
+      <a href="tel:0882323100" class="btn-primary mt-3" style="justify-content:center;">088-232 31 00</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero-bg grain-layer relative"
+         style="min-height: 100vh; display: flex; align-items: center; padding-top: 66px; overflow: hidden;">
+
+  <!-- Lift shaft geometric SVG -->
+  <div class="absolute inset-0 pointer-events-none" style="z-index:1;">
+    <svg viewBox="0 0 900 800" fill="none" xmlns="http://www.w3.org/2000/svg"
+         style="position:absolute; right:-60px; top:0; width:min(72%,700px); height:auto; opacity:0.07;">
+      <!-- Main shaft rails -->
+      <line x1="480" y1="0" x2="480" y2="800" stroke="white" stroke-width="3"/>
+      <line x1="620" y1="0" x2="620" y2="800" stroke="white" stroke-width="3"/>
+      <!-- Rail guides (horizontal bars) -->
+      <line x1="480" y1="80" x2="620" y2="80" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <line x1="480" y1="200" x2="620" y2="200" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <line x1="480" y1="320" x2="620" y2="320" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <line x1="480" y1="440" x2="620" y2="440" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <line x1="480" y1="560" x2="620" y2="560" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <line x1="480" y1="680" x2="620" y2="680" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Lift cabin -->
+      <rect x="490" y="260" width="120" height="160" rx="4" fill="white" opacity="0.12" stroke="white" stroke-width="2"/>
+      <!-- Cabin windows -->
+      <rect x="504" y="280" width="38" height="52" rx="2" fill="white" opacity="0.18" stroke="white" stroke-width="1.2"/>
+      <rect x="558" y="280" width="38" height="52" rx="2" fill="white" opacity="0.18" stroke="white" stroke-width="1.2"/>
+      <!-- Cabin door line -->
+      <line x1="550" y1="330" x2="550" y2="420" stroke="white" stroke-width="1" opacity="0.4"/>
+      <!-- Cables -->
+      <line x1="516" y1="0" x2="516" y2="260" stroke="white" stroke-width="1.5" opacity="0.55" stroke-dasharray="6,4"/>
+      <line x1="585" y1="0" x2="585" y2="260" stroke="white" stroke-width="1.5" opacity="0.55" stroke-dasharray="6,4"/>
+      <!-- Motor/pulley at top -->
+      <circle cx="550" cy="30" r="28" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+      <circle cx="550" cy="30" r="14" fill="white" opacity="0.1" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      <!-- Upward arrows (motion indicator) -->
+      <path d="M 680 480 L 680 280" stroke="white" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+      <path d="M 668 310 L 680 280 L 692 310" fill="none" stroke="white" stroke-width="2" opacity="0.35" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 720 530 L 720 330" stroke="white" stroke-width="1.5" opacity="0.2" stroke-linecap="round"/>
+      <path d="M 710 360 L 720 330 L 730 360" fill="none" stroke="white" stroke-width="1.5" opacity="0.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Second shaft (background) -->
+      <line x1="750" y1="0" x2="750" y2="800" stroke="white" stroke-width="1.5" opacity="0.35"/>
+      <line x1="860" y1="0" x2="860" y2="800" stroke="white" stroke-width="1.5" opacity="0.35"/>
+      <line x1="750" y1="160" x2="860" y2="160" stroke="white" stroke-width="1" opacity="0.22"/>
+      <line x1="750" y1="320" x2="860" y2="320" stroke="white" stroke-width="1" opacity="0.22"/>
+      <line x1="750" y1="480" x2="860" y2="480" stroke="white" stroke-width="1" opacity="0.22"/>
+      <line x1="750" y1="640" x2="860" y2="640" stroke="white" stroke-width="1" opacity="0.22"/>
+      <!-- Diagonal technical lines -->
+      <line x1="300" y1="600" x2="620" y2="200" stroke="white" stroke-width="1" opacity="0.12"/>
+      <line x1="200" y1="700" x2="480" y2="300" stroke="white" stroke-width="0.8" opacity="0.08"/>
+    </svg>
+    <!-- Bottom fade -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:180px;
+                background:linear-gradient(to top,rgba(12,22,36,0.55),transparent);"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 w-full py-20 lg:py-0" style="z-index:2;">
+    <div style="max-width:680px;">
+
+      <span class="sec-label reveal" style="margin-bottom: 18px; display:block;">
+        Lift Installatie &amp; Service
+      </span>
+
+      <h1 class="font-display font-extrabold text-white reveal d1"
+          style="font-size: clamp(2.8rem, 6.2vw, 5rem); letter-spacing: -0.01em; line-height: 1.02; margin-bottom: 24px; text-transform: uppercase;">
+        Next Level Service<br>
+        <span style="color: var(--navy-lt);">door heel Nederland.</span>
+      </h1>
+
+      <p class="reveal d2"
+         style="font-size: clamp(1rem, 1.9vw, 1.125rem); color: rgba(255,255,255,0.68); line-height: 1.78; margin-bottom: 36px; max-width: 520px;">
+        Als merkonafhankelijke partner zorgen wij voor optimale prestaties van uw liftinstallaties — van nieuwe installatie tot modernisering en 24/7 onderhoud door heel Nederland.
+      </p>
+
+      <div class="flex flex-wrap gap-4 reveal d3">
+        <a href="#diensten" class="btn-primary">
+          Ontdek onze diensten
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M2.5 7.5H12.5M8.5 3.5L12.5 7.5L8.5 11.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn-secondary">Neem contact op</a>
+      </div>
+
+      <!-- Emergency strip -->
+      <div class="reveal d4" style="margin-top:40px;display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:4px;background:rgba(224,114,20,0.12);border:1px solid rgba(224,114,20,0.3);">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="6.5" stroke="#e07214" stroke-width="1.5"/>
+          <path d="M8 5v3.5L10 10" stroke="#e07214" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span style="font-family:'Barlow',sans-serif;font-size:0.8125rem;color:rgba(255,255,255,0.72);font-weight:500;">
+          24/7 Storingsdienst: <a href="tel:0882323123" style="color:#e07214;font-weight:700;">088-232 31 23</a>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wave transition: hero → white -->
+  <div class="absolute bottom-0 left-0 right-0" style="z-index:3; line-height:0;">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%;height:64px;display:block;">
+      <path d="M0,64 L0,24 Q360,64 720,32 Q1080,0 1440,40 L1440,64 Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     KERNWAARDEN — 3 pillar cards
+═══════════════════════════════════════════ -->
+<section style="background: white; padding: 80px 0 96px; position: relative;">
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+    <div class="text-center reveal" style="margin-bottom: 52px;">
+      <span class="sec-label">Onze kernwaarden</span>
+      <h2 class="font-display font-bold reveal d1"
+          style="font-size: clamp(1.8rem, 3.8vw, 3rem); letter-spacing: -0.01em; color: var(--navy-dp); margin-top: 10px; line-height: 1.1; text-transform: uppercase;">
+        Waarom PREMIUM Liften?
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+      <!-- Afspraak = Afspraak -->
+      <div class="pillar-card reveal d1">
+        <div style="width:52px;height:52px;color:var(--navy);margin-bottom:22px;">
+          <svg viewBox="0 0 52 52" fill="none">
+            <rect x="8" y="10" width="36" height="32" rx="3" stroke="currentColor" stroke-width="1.9"/>
+            <line x1="8" y1="18" x2="44" y2="18" stroke="currentColor" stroke-width="1.6" opacity="0.4"/>
+            <line x1="16" y1="8" x2="16" y2="14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            <line x1="36" y1="8" x2="36" y2="14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            <path d="M18 29 L22 33 L34 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="sec-label" style="margin-bottom:10px;">Betrouwbaarheid</div>
+        <h3 class="font-display font-bold" style="font-size:1.35rem;color:var(--navy-dp);margin-bottom:12px;letter-spacing:0;text-transform:uppercase;">
+          Afspraak = Afspraak
+        </h3>
+        <p style="font-size:0.9375rem;color:rgba(12,22,36,0.6);line-height:1.74;">
+          Afspraken zijn belangrijk. We hanteren korte lijnen, acteren snel en communiceren helder. U weet altijd waar u aan toe bent.
+        </p>
+      </div>
+
+      <!-- Experts in Techniek -->
+      <div class="pillar-card reveal d2">
+        <div style="width:52px;height:52px;color:var(--navy);margin-bottom:22px;">
+          <svg viewBox="0 0 52 52" fill="none">
+            <circle cx="26" cy="22" r="9" stroke="currentColor" stroke-width="1.9"/>
+            <path d="M14 42c0-6.63 5.37-12 12-12s12 5.37 12 12" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            <path d="M34 14 L40 8 M36 8 L40 8 L40 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+          </svg>
+        </div>
+        <div class="sec-label" style="margin-bottom:10px;">Vakmanschap</div>
+        <h3 class="font-display font-bold" style="font-size:1.35rem;color:var(--navy-dp);margin-bottom:12px;letter-spacing:0;text-transform:uppercase;">
+          Experts in Techniek
+        </h3>
+        <p style="font-size:0.9375rem;color:rgba(12,22,36,0.6);line-height:1.74;">
+          Onze monteurs zijn gecertificeerde experts op het gebied van lifttechniek en zorgen voor optimale resultaten bij elke installatie.
+        </p>
+      </div>
+
+      <!-- 24/7 Service -->
+      <div class="pillar-card reveal d3">
+        <div style="width:52px;height:52px;color:var(--navy);margin-bottom:22px;">
+          <svg viewBox="0 0 52 52" fill="none">
+            <circle cx="26" cy="26" r="16" stroke="currentColor" stroke-width="1.9"/>
+            <path d="M26 16 L26 26 L33 29" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="26" cy="26" r="2" fill="currentColor" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="sec-label" style="margin-bottom:10px;">Beschikbaarheid</div>
+        <h3 class="font-display font-bold" style="font-size:1.35rem;color:var(--navy-dp);margin-bottom:12px;letter-spacing:0;text-transform:uppercase;">
+          24/7 Service
+        </h3>
+        <p style="font-size:0.9375rem;color:rgba(12,22,36,0.6);line-height:1.74;">
+          Onze landelijke service organisatie staat 24 uur per dag, 7 dagen per week paraat om eventuele storingen direct op te lossen.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom wave: white → steel -->
+  <div style="position:absolute;bottom:0;left:0;right:0;line-height:0;">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%;height:64px;display:block;">
+      <path d="M0,64 L0,24 Q360,64 720,32 Q1080,0 1440,40 L1440,64 Z" fill="#e4eef8"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     DIENSTEN — 3 service cards
+═══════════════════════════════════════════ -->
+<section id="diensten" style="background: var(--steel); padding: 96px 0 104px; position:relative;">
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+    <div class="text-center reveal" style="margin-bottom: 52px;">
+      <span class="sec-label">Onze diensten</span>
+      <h2 class="font-display font-bold reveal d1"
+          style="font-size: clamp(1.8rem, 3.8vw, 3rem); letter-spacing: -0.01em; color: var(--navy-dp); margin-top: 10px; line-height: 1.1; text-transform: uppercase;">
+        Wat wij voor u kunnen doen
+      </h2>
+      <p class="reveal d2" style="font-size:1rem;color:rgba(12,22,36,0.5);margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.72;">
+        Van nieuwe installatie tot modernisering en doorlopend onderhoud — wij ontzorgen u volledig.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+      <!-- Nieuwe Liften -->
+      <div class="service-card reveal d1" id="nieuwe-liften">
+        <div style="width:48px;height:48px;color:var(--navy);margin-bottom:20px;">
+          <svg viewBox="0 0 48 48" fill="none">
+            <!-- Building with lift shaft -->
+            <rect x="6" y="12" width="28" height="32" rx="2" stroke="currentColor" stroke-width="1.9"/>
+            <rect x="17" y="12" width="8" height="32" stroke="currentColor" stroke-width="1.3" opacity="0.45"/>
+            <rect x="19" y="20" width="4" height="6" rx="1" fill="currentColor" opacity="0.6"/>
+            <!-- Upward arrow -->
+            <path d="M38 28 L38 10 M32 16 L38 10 L44 16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+          </svg>
+        </div>
+        <h3 class="font-display font-bold" style="font-size:1.25rem;color:var(--navy-dp);margin-bottom:12px;letter-spacing:0;text-transform:uppercase;">Nieuwe liften</h3>
+        <p style="font-size:0.875rem;color:rgba(12,22,36,0.58);line-height:1.74;margin-bottom:20px;">
+          Wij verzorgen de complete installatie van nieuwe liftinstallaties — van projectbegeleiding en engineering tot montage en oplevering. Merkonafhankelijk en op maat.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;">
+          <span class="tag-pill">Personenliften</span>
+          <span class="tag-pill">Goederenliften</span>
+          <span class="tag-pill">Rolstoelliften</span>
+        </div>
+        <a href="#contact" class="card-link">
+          Meer informatie
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 6.5H11M7.5 3L11 6.5L7.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Modernisering -->
+      <div class="service-card reveal d2" id="modernisering">
+        <div style="width:48px;height:48px;color:var(--navy);margin-bottom:20px;">
+          <svg viewBox="0 0 48 48" fill="none">
+            <!-- Old lift becoming new -->
+            <rect x="6" y="14" width="16" height="26" rx="2" stroke="currentColor" stroke-width="1.9" opacity="0.4"/>
+            <rect x="26" y="10" width="16" height="30" rx="2" stroke="currentColor" stroke-width="1.9"/>
+            <!-- Arrow from old to new -->
+            <path d="M23 27 L25 27 M17 27 L20 27" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" opacity="0.55"/>
+            <path d="M21 24 L25 27 L21 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+            <!-- Modern details -->
+            <rect x="29" y="18" width="10" height="14" rx="1" fill="currentColor" opacity="0.12"/>
+            <circle cx="34" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+          </svg>
+        </div>
+        <h3 class="font-display font-bold" style="font-size:1.25rem;color:var(--navy-dp);margin-bottom:12px;letter-spacing:0;text-transform:uppercase;">Modernisering</h3>
+        <p style="font-size:0.875rem;color:rgba(12,22,36,0.58);line-height:1.74;margin-bottom:20px;">
+          Verouderde liftinstallaties brengen risico's met zich mee. Wij moderniseren bestaande liften met nieuwe technologie, voor betere veiligheid, comfort en energiebesparing.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;">
+          <span class="tag-pill">Aandrijving</span>
+          <span class="tag-pill">Besturing</span>
+          <span class="tag-pill">Cabine-upgrade</span>
+        </div>
+        <a href="#contact" class="card-link">
+          Meer informatie
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 6.5H11M7.5 3L11 6.5L7.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Service & Onderhoud -->
+      <div class="service-card reveal d3" id="service">
+        <div style="width:48px;height:48px;color:var(--navy);margin-bottom:20px;">
+          <svg viewBox="0 0 48 48" fill="none">
+            <!-- Wrench -->
+            <path d="M34 8 C40 14 38 24 30 26 L14 42 C12 44 9 44 7 42 C5 40 5 37 7 35 L23 19 C25 11 32 4 34 8Z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="39" r="2" fill="currentColor" opacity="0.55"/>
+            <line x1="30" y1="12" x2="36" y2="18" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3 class="font-display font-bold" style="font-size:1.25rem;color:var(--navy-dp);margin-bottom:12px;letter-spacing:0;text-transform:uppercase;">Service &amp; Onderhoud</h3>
+        <p style="font-size:0.875rem;color:rgba(12,22,36,0.58);line-height:1.74;margin-bottom:20px;">
+          Preventief onderhoud en snelle reparaties — 24/7 bereikbaar voor storingen. Onze landelijke organisatie garandeert korte responstijden in heel Nederland.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;">
+          <span class="tag-pill">Preventief onderhoud</span>
+          <span class="tag-pill">24/7 Storingsdienst</span>
+        </div>
+        <a href="#contact" class="card-link">
+          Meer informatie
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 6.5H11M7.5 3L11 6.5L7.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom wave: steel → white -->
+  <div style="position:absolute;bottom:0;left:0;right:0;line-height:0;">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%;height:64px;display:block;">
+      <path d="M0,64 L0,24 Q360,64 720,32 Q1080,0 1440,40 L1440,64 Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     OVER ONS — Split layout
+═══════════════════════════════════════════ -->
+<section id="over-ons" style="background: white; padding: 96px 0 104px; position:relative;">
+
+  <!-- Top wave: steel → white -->
+  <div style="position:absolute;top:0;left:0;right:0;line-height:0;transform:scaleY(-1);">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%;height:64px;display:block;">
+      <path d="M0,64 L0,24 Q360,64 720,32 Q1080,0 1440,40 L1440,64 Z" fill="#e4eef8"/>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      <!-- Illustration — lift shaft SVG -->
+      <div class="reveal hidden lg:block" style="height: 440px; border-radius: 10px; overflow: hidden; box-shadow: 0 24px 64px rgba(12,22,36,0.16); background: #c8ddf0;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440"
+             style="width:100%;height:100%;display:block;"
+             preserveAspectRatio="xMidYMid meet"
+             aria-label="PREMIUM Liften diensten: installatie, modernisering en service" role="img">
+          <rect width="720" height="440" fill="#c8ddf0"/>
+
+          <!-- ══ ZONE 1: Nieuwe Installatie (linksboven) ══ -->
+          <!-- Building outline -->
+          <rect x="44" y="52" width="80" height="140" rx="4" fill="rgba(255,255,255,0.42)" stroke="rgba(12,22,36,0.58)" stroke-width="1.8"/>
+          <!-- Lift shaft inside building -->
+          <rect x="68" y="60" width="22" height="132" fill="rgba(26,93,168,0.14)" stroke="rgba(12,22,36,0.45)" stroke-width="1.3"/>
+          <!-- Rails -->
+          <line x1="71" y1="60" x2="71" y2="192" stroke="rgba(12,22,36,0.5)" stroke-width="1.2"/>
+          <line x1="87" y1="60" x2="87" y2="192" stroke="rgba(12,22,36,0.5)" stroke-width="1.2"/>
+          <!-- Cabin -->
+          <rect x="73" y="110" width="12" height="18" rx="1.5" fill="rgba(26,93,168,0.55)" stroke="rgba(12,22,36,0.5)" stroke-width="1.2"/>
+          <!-- Building windows -->
+          <rect x="50" y="72" width="10" height="10" rx="1.5" fill="rgba(26,93,168,0.2)" stroke="rgba(12,22,36,0.42)" stroke-width="1.2"/>
+          <rect x="50" y="90" width="10" height="10" rx="1.5" fill="rgba(26,93,168,0.2)" stroke="rgba(12,22,36,0.42)" stroke-width="1.2"/>
+          <rect x="50" y="108" width="10" height="10" rx="1.5" fill="rgba(26,93,168,0.2)" stroke="rgba(12,22,36,0.42)" stroke-width="1.2"/>
+          <rect x="98" y="72" width="10" height="10" rx="1.5" fill="rgba(26,93,168,0.2)" stroke="rgba(12,22,36,0.42)" stroke-width="1.2"/>
+          <rect x="98" y="90" width="10" height="10" rx="1.5" fill="rgba(26,93,168,0.2)" stroke="rgba(12,22,36,0.42)" stroke-width="1.2"/>
+          <rect x="98" y="108" width="10" height="10" rx="1.5" fill="rgba(12,22,36,0.08)" stroke="rgba(12,22,36,0.32)" stroke-width="1.2"/>
+          <!-- Ground line -->
+          <line x1="30" y1="192" x2="160" y2="192" stroke="rgba(12,22,36,0.35)" stroke-width="1.5"/>
+          <!-- Upward arrow on building -->
+          <path d="M 140 150 L 140 90" stroke="rgba(26,93,168,0.72)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M 134 106 L 140 90 L 146 106" fill="none" stroke="rgba(26,93,168,0.72)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Monteur (persoon A) -->
+          <circle cx="188" cy="108" r="13" fill="rgba(12,22,36,0.04)" stroke="rgba(12,22,36,0.6)" stroke-width="1.7"/>
+          <line x1="188" y1="121" x2="188" y2="134" stroke="rgba(12,22,36,0.5)" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M 175,140 Q 188,133 201,140" fill="none" stroke="rgba(12,22,36,0.58)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="188" y1="140" x2="188" y2="178" stroke="rgba(12,22,36,0.46)" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- Left arm reaching to building -->
+          <path d="M 176,148 C 163,144 150,142 136,148" fill="none" stroke="rgba(12,22,36,0.52)" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- Right arm down -->
+          <path d="M 200,148 C 208,162 208,172 206,178" fill="none" stroke="rgba(12,22,36,0.38)" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- Legs -->
+          <line x1="188" y1="178" x2="178" y2="210" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="188" y1="178" x2="198" y2="210" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="178" y1="210" x2="168" y2="216" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="198" y1="210" x2="208" y2="216" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- Tool box -->
+          <rect x="208" y="160" width="20" height="14" rx="2" fill="rgba(255,255,255,0.6)" stroke="rgba(12,22,36,0.5)" stroke-width="1.4"/>
+          <line x1="208" y1="165" x2="228" y2="165" stroke="rgba(12,22,36,0.3)" stroke-width="1"/>
+
+          <!-- ══ ZONE 3: Modernisering (rechtsboven) ══ -->
+          <!-- Old lift (left, faded) -->
+          <rect x="480" y="58" width="52" height="130" rx="3" fill="rgba(255,255,255,0.25)" stroke="rgba(12,22,36,0.35)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <rect x="490" y="70" width="14" height="100" fill="rgba(12,22,36,0.06)" stroke="rgba(12,22,36,0.28)" stroke-width="1"/>
+          <rect x="492" y="108" width="10" height="14" rx="1" fill="rgba(12,22,36,0.2)" stroke="rgba(12,22,36,0.35)" stroke-width="1"/>
+          <!-- Arrow from old to new -->
+          <path d="M 538 120 L 558 120" stroke="rgba(26,93,168,0.65)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 552 114 L 560 120 L 552 126" fill="none" stroke="rgba(26,93,168,0.65)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- New modern lift (right, bright) -->
+          <rect x="564" y="48" width="64" height="148" rx="4" fill="rgba(255,255,255,0.55)" stroke="rgba(12,22,36,0.58)" stroke-width="1.8"/>
+          <rect x="576" y="58" width="18" height="138" fill="rgba(26,93,168,0.14)" stroke="rgba(12,22,36,0.42)" stroke-width="1.2"/>
+          <line x1="579" y1="58" x2="579" y2="196" stroke="rgba(12,22,36,0.44)" stroke-width="1.1"/>
+          <line x1="591" y1="58" x2="591" y2="196" stroke="rgba(12,22,36,0.44)" stroke-width="1.1"/>
+          <!-- Modern cabin -->
+          <rect x="581" y="96" width="8" height="22" rx="1.5" fill="rgba(26,93,168,0.7)" stroke="rgba(12,22,36,0.5)" stroke-width="1.2"/>
+          <!-- Cable -->
+          <line x1="585" y1="48" x2="585" y2="96" stroke="rgba(12,22,36,0.55)" stroke-width="1.2" stroke-dasharray="4,3"/>
+          <!-- Modern control panel -->
+          <rect x="610" y="80" width="12" height="80" rx="2" fill="rgba(255,255,255,0.65)" stroke="rgba(12,22,36,0.48)" stroke-width="1.4"/>
+          <circle cx="616" cy="92" r="2.5" fill="rgba(26,93,168,0.7)"/>
+          <circle cx="616" cy="104" r="2.5" fill="rgba(26,93,168,0.4)"/>
+          <circle cx="616" cy="116" r="2.5" fill="rgba(26,93,168,0.25)"/>
+          <line x1="612" y1="128" x2="620" y2="128" stroke="rgba(12,22,36,0.22)" stroke-width="1"/>
+          <line x1="612" y1="135" x2="620" y2="135" stroke="rgba(12,22,36,0.18)" stroke-width="1"/>
+          <!-- Ground line -->
+          <line x1="465" y1="196" x2="645" y2="196" stroke="rgba(12,22,36,0.3)" stroke-width="1.5"/>
+          <!-- Technician B -->
+          <circle cx="648" cy="108" r="13" fill="rgba(12,22,36,0.04)" stroke="rgba(12,22,36,0.58)" stroke-width="1.7"/>
+          <line x1="648" y1="121" x2="648" y2="135" stroke="rgba(12,22,36,0.46)" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M 635,141 Q 648,135 661,141" fill="none" stroke="rgba(12,22,36,0.55)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="648" y1="141" x2="648" y2="178" stroke="rgba(12,22,36,0.44)" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M 637,149 C 629,154 625,164 626,174" fill="none" stroke="rgba(12,22,36,0.5)" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M 659,149 C 664,156 664,168 661,178" fill="none" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="648" y1="178" x2="637" y2="210" stroke="rgba(12,22,36,0.34)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="648" y1="178" x2="659" y2="210" stroke="rgba(12,22,36,0.34)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="637" y1="210" x2="627" y2="216" stroke="rgba(12,22,36,0.34)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="659" y1="210" x2="669" y2="216" stroke="rgba(12,22,36,0.34)" stroke-width="1.7" stroke-linecap="round"/>
+
+          <!-- ══ Verbindingen (driehoek) ══ -->
+          <circle cx="258" cy="218" r="3.5" fill="#1a5da8" opacity="0.6"/>
+          <line x1="262" y1="218" x2="448" y2="218" stroke="rgba(26,93,168,0.42)" stroke-width="1.5" stroke-dasharray="4,4"/>
+          <circle cx="452" cy="218" r="3.5" fill="#1a5da8" opacity="0.6"/>
+          <line x1="258" y1="222" x2="343" y2="294" stroke="rgba(26,93,168,0.42)" stroke-width="1.5" stroke-dasharray="4,4"/>
+          <line x1="452" y1="222" x2="377" y2="294" stroke="rgba(26,93,168,0.42)" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+          <!-- ══ ZONE 2: Service & Onderhoud (onderin) ══ -->
+          <!-- Service van / truck -->
+          <rect x="282" y="322" width="72" height="42" rx="4" fill="rgba(255,255,255,0.48)" stroke="rgba(12,22,36,0.55)" stroke-width="1.8"/>
+          <rect x="282" y="322" width="24" height="42" rx="4" fill="rgba(26,93,168,0.22)" stroke="rgba(12,22,36,0.45)" stroke-width="1.5"/>
+          <!-- Windscreen -->
+          <rect x="285" y="327" width="18" height="14" rx="2" fill="rgba(255,255,255,0.55)" stroke="rgba(12,22,36,0.32)" stroke-width="1.2"/>
+          <!-- Side text label -->
+          <rect x="316" y="334" width="32" height="10" rx="2" fill="rgba(26,93,168,0.18)" stroke="rgba(26,93,168,0.45)" stroke-width="1"/>
+          <line x1="318" y1="339" x2="346" y2="339" stroke="rgba(26,93,168,0.6)" stroke-width="1"/>
+          <!-- Wheels -->
+          <circle cx="296" cy="364" r="9" fill="rgba(12,22,36,0.55)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <circle cx="296" cy="364" r="4" fill="rgba(255,255,255,0.22)"/>
+          <circle cx="342" cy="364" r="9" fill="rgba(12,22,36,0.55)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <circle cx="342" cy="364" r="4" fill="rgba(255,255,255,0.22)"/>
+          <!-- 24/7 badge -->
+          <circle cx="400" cy="340" r="26" fill="rgba(255,255,255,0.45)" stroke="rgba(26,93,168,0.6)" stroke-width="1.8"/>
+          <circle cx="400" cy="340" r="17" fill="rgba(26,93,168,0.2)" stroke="#1a5da8" stroke-width="1.5"/>
+          <!-- Clock face -->
+          <line x1="400" y1="329" x2="400" y2="340" stroke="#1a5da8" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="400" y1="340" x2="408" y2="344" stroke="#1a5da8" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Service tech (person C) -->
+          <circle cx="450" cy="310" r="13" fill="rgba(12,22,36,0.04)" stroke="rgba(12,22,36,0.6)" stroke-width="1.7"/>
+          <line x1="450" y1="323" x2="450" y2="334" stroke="rgba(12,22,36,0.48)" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M 437,340 Q 450,334 463,340" fill="none" stroke="rgba(12,22,36,0.56)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="450" y1="340" x2="450" y2="374" stroke="rgba(12,22,36,0.46)" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M 438,348 C 430,352 424,358 422,365" fill="none" stroke="rgba(12,22,36,0.5)" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M 462,348 C 470,354 470,366 466,375" fill="none" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="450" y1="374" x2="439" y2="400" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="450" y1="374" x2="461" y2="400" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="439" y1="400" x2="429" y2="406" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="461" y1="400" x2="471" y2="406" stroke="rgba(12,22,36,0.36)" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- Wrench (right hand) -->
+          <path d="M 466,370 C 472,368 476,364 474,358 L 476,356 C 482,360 482,370 476,374 L 468,382 C 466,384 463,384 461,382 C 459,380 459,377 461,375 Z" fill="none" stroke="rgba(12,22,36,0.52)" stroke-width="1.5" stroke-linejoin="round"/>
+
+          <!-- ══ Labels ══ -->
+          <text x="88" y="228" text-anchor="middle" font-family="Barlow, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#e07214" opacity="0.88">INSTALLATIE</text>
+          <text x="554" y="228" text-anchor="middle" font-family="Barlow, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#e07214" opacity="0.88">MODERNISERING</text>
+          <text x="360" y="418" text-anchor="middle" font-family="Barlow, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="#e07214" opacity="0.88">SERVICE &amp; ONDERHOUD</text>
+        </svg>
+      </div>
+
+      <!-- Text -->
+      <div class="reveal d2">
+        <span class="sec-label">Over ons</span>
+        <h2 class="font-display font-bold"
+            style="font-size: clamp(1.7rem, 3.4vw, 2.7rem); letter-spacing: -0.01em; color: var(--navy-dp); margin-top: 10px; margin-bottom: 22px; line-height: 1.12; text-transform: uppercase;">
+          Merkonafhankelijk partner voor uw liftinstallaties
+        </h2>
+
+        <!-- Quote block -->
+        <div style="position:relative; padding-left: 18px; border-left: 2px solid rgba(224,114,20,0.28); margin-bottom: 22px;">
+          <span aria-hidden="true"
+                style="position:absolute;left:-10px;top:-22px;font-size:80px;line-height:1;color:var(--orange);opacity:0.14;font-family:'Barlow Condensed';font-weight:800;user-select:none;"
+          >&ldquo;</span>
+          <p style="font-size:1rem;color:rgba(12,22,36,0.62);line-height:1.82;font-style:italic;">
+            Wij zijn een merkonafhankelijke partner die de klant centraal stelt. Onze kracht zit in het combineren van technische vakkennis met persoonlijke service en snelle communicatie.
+          </p>
+          <p style="margin-top:10px;font-size:0.8125rem;color:rgba(12,22,36,0.42);font-weight:600;font-family:'Barlow';">
+            — Marco de Groot, Algemeen Directeur
+          </p>
+        </div>
+
+        <p style="font-size:0.9375rem;color:rgba(12,22,36,0.55);line-height:1.76;margin-bottom:28px;">
+          PREMIUM Liften is gevestigd in Almere en actief door heel Nederland. Wij werken merkonafhankelijk, waardoor wij altijd de beste oplossing voor uw specifieke situatie kunnen bieden — zonder gebonden te zijn aan één fabrikant.
+        </p>
+
+        <!-- Certifications -->
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;">
+          <span style="padding:6px 14px;background:rgba(26,93,168,0.08);border:1px solid rgba(26,93,168,0.2);border-radius:4px;font-family:'Barlow';font-size:0.8125rem;font-weight:700;color:var(--navy-dk);letter-spacing:0.06em;">FME</span>
+          <span style="padding:6px 14px;background:rgba(26,93,168,0.08);border:1px solid rgba(26,93,168,0.2);border-radius:4px;font-family:'Barlow';font-size:0.8125rem;font-weight:700;color:var(--navy-dk);letter-spacing:0.06em;">VCA</span>
+          <span style="padding:6px 14px;background:rgba(26,93,168,0.08);border:1px solid rgba(26,93,168,0.2);border-radius:4px;font-family:'Barlow';font-size:0.8125rem;font-weight:700;color:var(--navy-dk);letter-spacing:0.06em;">NLB</span>
+          <span style="padding:6px 14px;background:rgba(26,93,168,0.08);border:1px solid rgba(26,93,168,0.2);border-radius:4px;font-family:'Barlow';font-size:0.8125rem;font-weight:700;color:var(--navy-dk);letter-spacing:0.06em;">NEN</span>
+        </div>
+
+        <a href="#contact" class="btn-outline-navy">
+          Neem contact op
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M2.5 7.5H12.5M8.5 3.5L12.5 7.5L8.5 11.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+<section id="contact" class="grain-layer" style="background: var(--navy-dp); padding: 96px 0 100px; position:relative;">
+
+  <!-- Top wave: white → navy -->
+  <div style="position:absolute;top:0;left:0;right:0;line-height:0;transform:scaleY(-1);">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%;height:64px;display:block;">
+      <path d="M0,64 L0,24 Q360,64 720,32 Q1080,0 1440,40 L1440,64 Z" fill="white"/>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+      <!-- Left: heading + CTA -->
+      <div class="reveal">
+        <span class="sec-label" style="color: var(--navy-lt);">Contact</span>
+        <h2 class="font-display font-bold text-white"
+            style="font-size: clamp(1.8rem, 3.8vw, 3rem); letter-spacing: -0.01em; margin-top: 10px; margin-bottom: 18px; line-height: 1.08; text-transform: uppercase;">
+          Hoe kunnen wij u van dienst zijn?
+        </h2>
+        <p style="font-size:1rem;color:rgba(255,255,255,0.58);line-height:1.76;margin-bottom:30px;max-width:380px;">
+          Neem vrijblijvend contact op voor een gesprek over uw liftinstallatie, onderhoud of modernisering. Wij reageren snel.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:info@premiumliften.nl" class="btn-primary">
+            Mail ons
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <rect x="1.5" y="3.5" width="12" height="8.5" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M1.5 5.5L7.5 9L13.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="tel:0882323123" class="btn-secondary" style="border-color:rgba(224,114,20,0.5);color:rgba(255,255,255,0.85);">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M7 4v3.5L9 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            24/7 Storing
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: contact details -->
+      <div class="flex flex-col gap-7 reveal d2">
+
+        <div class="contact-row">
+          <div class="ci-icon">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <path d="M3 2.5h3l1.5 3.5-1.5 1.5c.9 1.85 2.65 3.6 4.5 4.5L12 10.5l3.5 1.5v3C12 16.5 1 5.5 3 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <p style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);margin-bottom:4px;font-weight:600;font-family:'Barlow';">Algemeen</p>
+            <a href="tel:0882323100"
+               style="font-size:1.0625rem;font-weight:600;color:#fff;font-family:'Barlow';transition:color 0.2s;"
+               onmouseover="this.style.color='var(--navy-lt)'" onmouseout="this.style.color='#fff'">
+              088-232 31 00
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="ci-icon" style="background:rgba(224,114,20,0.18);">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <circle cx="8.5" cy="8.5" r="6" stroke="#e07214" stroke-width="1.5"/>
+              <path d="M8.5 5.5v3.5L10.5 11" stroke="#e07214" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <p style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);margin-bottom:4px;font-weight:600;font-family:'Barlow';">24/7 Storingsdienst</p>
+            <a href="tel:0882323123"
+               style="font-size:1.0625rem;font-weight:700;color:#e07214;font-family:'Barlow';transition:color 0.2s;"
+               onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+              088-232 31 23
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="ci-icon">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <rect x="1.5" y="3.5" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M1.5 6L8.5 10.5L15.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <p style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);margin-bottom:4px;font-weight:600;font-family:'Barlow';">E-mail</p>
+            <a href="mailto:info@premiumliften.nl"
+               style="font-size:1.0625rem;font-weight:500;color:#fff;font-family:'Barlow';transition:color 0.2s;"
+               onmouseover="this.style.color='var(--navy-lt)'" onmouseout="this.style.color='#fff'">
+              info@premiumliften.nl
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="ci-icon">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <path d="M8.5 8.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8.5 1.5c-3.04 0-5.5 2.46-5.5 5.5 0 4 5.5 8.5 5.5 8.5s5.5-4.5 5.5-8.5c0-3.04-2.46-5.5-5.5-5.5Z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <p style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);margin-bottom:4px;font-weight:600;font-family:'Barlow';">Adres</p>
+            <p style="font-size:1.0625rem;font-weight:500;color:#fff;font-family:'Barlow';line-height:1.5;">
+              Televisieweg 54<br>1322 AM Almere
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer style="background: var(--navy-dp); border-top: 1px solid rgba(255,255,255,0.07); padding: 28px 0;">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-5">
+
+      <!-- Wordmark -->
+      <a href="/premium liften/" class="flex items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+          <rect x="6" y="2" width="16" height="24" rx="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.6"/>
+          <line x1="9" y1="2" x2="9" y2="26" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
+          <line x1="19" y1="2" x2="19" y2="26" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
+          <rect x="9" y="10" width="10" height="8" rx="1.5" fill="rgba(51,129,204,0.45)" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+        </svg>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:0.04em;">
+          PREMIUM <span style="color:rgba(51,129,204,0.6);">Liften</span>
+        </span>
+      </a>
+
+      <nav style="display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:center;">
+        <a href="/premium liften/" class="foot-link">Home</a>
+        <a href="#nieuwe-liften" class="foot-link">Nieuwe liften</a>
+        <a href="#modernisering" class="foot-link">Modernisering</a>
+        <a href="#service" class="foot-link">Service</a>
+        <a href="#over-ons" class="foot-link">Over ons</a>
+        <a href="#contact" class="foot-link">Contact</a>
+      </nav>
+
+      <p style="font-family:'Barlow';font-size:0.75rem;color:rgba(255,255,255,0.22);flex-shrink:0;">
+        &copy; 2026 PREMIUM Liften
+      </p>
+
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+  // 1. Navbar scroll state
+  const navbar  = document.getElementById('navbar');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // 2. Hamburger toggle
+  menuBtn.addEventListener('click', () => {
+    const isOpen = menuBtn.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+    mobileNav.classList.toggle('hidden', !isOpen);
+  });
+
+  // Close mobile nav on link click
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.add('hidden');
+    });
+  });
+
+  // 3. Scroll reveal (IntersectionObserver)
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
